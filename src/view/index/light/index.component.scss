@@ -1,4 +1,4 @@
-/* 背景层 */
+ /* 背景层 */
 .layer-bg {
     z-index: -1;
     position: fixed;
@@ -36,11 +36,18 @@
 .top-nav {
     padding: 10px;
     overflow-x: auto;
+    overflow-y: hidden; /* 隐藏垂直滚动条 */
     white-space: nowrap;
     border-bottom: 2px solid #FFA500; /* 更粗的底部边框 */
     text-align: center;
     background: linear-gradient(to right, #FF7E00, #FF007A, #00AAFF); /* 丰富的渐变背景 */
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
+    scrollbar-width: none; /* Firefox 隐藏滚动条 */
+}
+
+/* 隐藏滚动条的样式 */
+.top-nav::-webkit-scrollbar {
+    display: none; /* Chrome、Safari 和 Edge 隐藏滚动条 */
 }
 
 /* 链接样式 */
@@ -115,14 +122,21 @@
     box-shadow: -2px 0 10px rgba(0, 0, 0, 0.1); /* 阴影效果 */
 }
 
-/* 内容标题样式 */
-.main h1 {
-    color: #00AAFF; /* 标题颜色 */
-    margin-bottom: 15px; /* 下边距 */
+/* 自定义滚动条样式 */
+.main::-webkit-scrollbar {
+    width: 10px; /* 滚动条宽度 */
 }
 
-/* 内容段落样式 */
-.main p {
-    line-height: 1.6; /* 行高 */
-    color: #333; /* 段落颜色 */
+.main::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1); /* 滚动条轨道背景 */
+    border-radius: 5px; /* 圆角 */
+}
+
+.main::-webkit-scrollbar-thumb {
+    background: #FFA500; /* 滚动条滑块颜色 */
+    border-radius: 5px; /* 圆角 */
+}
+
+.main::-webkit-scrollbar-thumb:hover {
+    background: #00AAFF; /* 悬停时的颜色变化 */
 }
