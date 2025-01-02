@@ -69,7 +69,9 @@ $shadow-color: rgba(0, 0, 0, 0.1); // 阴影颜色
       display: none;
       box-shadow: 1px 1px 10px $shadow-color; // 增加阴影效果
       overflow: hidden;
-      background: $bg-color;
+      background: rgba(255, 255, 255, 0.5); /* 半透明背景 */
+      backdrop-filter: blur(10px); /* 背景模糊效果 */
+      color: white;
       transition: max-height 0.3s ease; // 更改过渡效果
     }
 
@@ -91,7 +93,7 @@ $shadow-color: rgba(0, 0, 0, 0.1); // 阴影颜色
     margin: 20px 10px 30px 10px; // 调整外边距
 
     .children-nav {
-      background: $bg-color;
+      background: white;
       margin: 15px 0;
       padding: 15px 10px; // 增加内边距
       white-space: nowrap;
@@ -128,7 +130,7 @@ $shadow-color: rgba(0, 0, 0, 0.1); // 阴影颜色
 
     li {
       margin-bottom: 15px; // 增加下边距
-      background: $bg-color; // 背景颜色
+      background: white; // 背景颜色
       box-shadow: 0 0 10px $shadow-color; // 增加阴影效果
       border-radius: 8px; // 圆角效果
       overflow: hidden; // 溢出隐藏
