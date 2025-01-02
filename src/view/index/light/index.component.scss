@@ -25,26 +25,41 @@
   transition: .1s linear;
   border: 1px solid transparent;
 
-  .top-nav {
+.top-nav {
     padding: 10px;
-    overflow-x: auto;
-    white-space: nowrap;
-    border-bottom: 1px solid #eee;
-    text-align: center;
-    a {
-      position: relative;
-      display: inline-block;
-      padding: 10px 15px;
-      color: #000;
-      cursor: pointer;
-      background-color: #00AAFF;
-      border: 0 1;
-      // border-radius: 5px;
-      overflow: hidden;
-      &:hover {
+    overflow-x: auto; /* 水平滚动 */
+    white-space: nowrap; /* 不换行 */
+    border-bottom: 1px solid #eee; /* 下边框 */
+    text-align: center; /* 文本居中 */
+    background-color: #00AAFF;
+
+    /* 隐藏滚动条 */
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* Internet Explorer 和 Edge */
+}
+
+.top-nav::-webkit-scrollbar {
+    display: none; /* Chrome 和 Safari */
+}
+
+.top-nav a {
+    font-weight: bold;
+    color: #000;
+    position: relative;
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #00AAFF;
+    border-left: 1px solid rgba(128, 128, 128, 0.5);
+    border-right: 1px solid rgba(128, 128, 128, 0.5);
+    overflow: hidden;
+    cursor: pointer;
+
+    &:hover {
         text-decoration: none;
-      }
-      &.active::after {
+        background-color: #0099CC; /* 悬停时改变背景颜色 */
+    }
+
+    &.active::after {
         content: "";
         position: absolute;
         bottom: 0;
@@ -52,11 +67,10 @@
         right: 20%;
         height: 3px;
         border-radius: 2px;
-        background-color: #FFA500;
-      }
+        background-color: #FFA500; /* 活动状态下的背景颜色 */
     }
-  }
 }
+
 
 .index-section {
   position: relative;
