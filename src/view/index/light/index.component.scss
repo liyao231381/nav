@@ -70,23 +70,6 @@
     transform: translateY(-2px); /* 向上移动效果 */
 }
 
-.top-nav a.clicked {
-    animation: clickAnimation 0.5s forwards; /* 使用动画 */
-}
-
-/* 点击动画 */
-@keyframes clickAnimation {
-    0% {
-        transform: translateY(0); /* 初始位置 */
-    }
-    50% {
-        transform: translateY(-5px); /* 向上移动 */
-    }
-    100% {
-        transform: translateY(5px); /* 回到原位 */
-    }
-}
-
 /* 活动链接效果 */
 .top-nav a.active {
     background-color: #FFA500; /* 活动状态的背景颜色 */
