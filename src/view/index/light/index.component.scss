@@ -25,12 +25,13 @@
   transition: .1s linear;
   border: 1px solid transparent;
 
+/* 导航栏样式 */
 .top-nav {
     padding: 10px;
-    overflow-x: auto; /* 水平滚动 */
-    white-space: nowrap; /* 不换行 */
-    border-bottom: 1px solid #eee; /* 下边框 */
-    text-align: center; /* 文本居中 */
+    overflow-x: auto;
+    white-space: nowrap;
+    border-bottom: 1px solid #eee;
+    text-align: center;
     background-color: #00AAFF;
 
     /* 隐藏滚动条 */
@@ -70,6 +71,7 @@
         background-color: #FFA500; /* 活动状态下的背景颜色 */
     }
 }
+
 
 
 .index-section {
