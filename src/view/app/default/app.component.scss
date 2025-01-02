@@ -1,4 +1,7 @@
-$bg-color: #fbfbfb;
+$bg-color: #fbfbfb; // 背景颜色
+$primary-color: #FFA500; // 主色：橙色
+$secondary-color: #00AAFF; // 辅助色：蓝色
+$shadow-color: rgba(0, 0, 0, 0.1); // 阴影颜色
 
 .app-page {
   padding: 45px 0;
@@ -6,102 +9,107 @@ $bg-color: #fbfbfb;
   background: #f6f6f6;
 
   .header {
-    z-index: 9999;;
+    z-index: 9999;
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     text-align: center;
     background: $bg-color;
-    box-shadow: 0 0 3px #ccc;
+    box-shadow: 0 4px 10px $shadow-color; // 增加阴影效果
 
     .header-top {
       position: relative;
-      height: 45px;
-      border-bottom: 1px solid #eee;
+      height: 60px; // 增加高度
+      border-bottom: 2px solid $primary-color; // 使用主色作为底边框
       background: $bg-color;
 
       .logo {
         display: inline-block;
-        width: 35px;
-        height: 35px;
-        margin-top: 4px;
+        width: 40px; // 增加logo大小
+        height: 40px;
+        margin-top: 8px; // 调整上边距
         pointer-events: none;
       }
     }
 
     .open {
       position: absolute;
-      top: 9px;
-      left: 15px;
+      top: 15px; // 调整位置
+      left: 20px; // 调整位置
       cursor: pointer;
 
       i {
         display: block;
-        margin-top: 6px;
-        height: 2px;
-        width: 25px;
-        background: #999;
-        transform-origin: right center;
-        transition: .1s linear;
+        margin-top: 8px; // 调整上边距
+        height: 3px; // 调整高度
+        width: 30px; // 调整宽度
+        background: $primary-color; // 使用主色
+        border-radius: 2px; // 圆角效果
+        transition: transform 0.2s ease; // 更改过渡效果
       }
 
       &.active {
-
         i:nth-child(1) {
-          transform: rotate(-45deg);
+          transform: rotate(-45deg) translateY(5px); // 更加平滑的旋转效果
         }
 
         i:nth-child(2) {
-          opacity: 0;
+          opacity: 0; // 隐藏
         }
 
         i:nth-child(3) {
-          transform: translateY(2px) rotate(45deg);
+          transform: translateY(-5px) rotate(45deg); // 更加平滑的旋转效果
         }
       }
     }
 
     .nav-open {
       display: none;
-      box-shadow: 1px 1px 5px #ccc;
+      box-shadow: 1px 1px 10px $shadow-color; // 增加阴影效果
       overflow: hidden;
       background: $bg-color;
-      transition: .1s linear;
+      transition: max-height 0.3s ease; // 更改过渡效果
     }
 
     .nav-title {
       display: inline-block;
       width: 50%;
-      font-size: 16px;
-      padding: 8px 0;
+      font-size: 18px; // 增加字体大小
+      padding: 10px 0; // 增加内边距
+      color: $primary-color; // 使用主色
 
       &:active,
       &.active {
-        background: rgba(0, 0, 0, .05);
+        background: rgba(255, 165, 0, 0.1); // 主色的背景效果
       }
     }
   }
 
   .wrapper {
-    margin: 15px 10px 30px 10px;
+    margin: 20px 10px 30px 10px; // 调整外边距
 
     .children-nav {
       background: $bg-color;
       margin: 15px 0;
-      padding: 10px 10px 5px;
+      padding: 15px 10px; // 增加内边距
       white-space: nowrap;
       overflow: auto;
-      box-shadow: 0 0 3px #ccc;
+      box-shadow: 0 2px 5px $shadow-color; // 增加阴影效果
 
       a {
         position: relative;
         display: inline-block;
-        font-size: 14px;
-        padding: 3px 5px;
-        margin: 0 3px 5px 0;
-        transition: background .1s linear;
-        color: #333;
+        font-size: 16px; // 增加字体大小
+        padding: 5px 10px; // 增加内边距
+        margin: 0 5px 5px 0;
+        transition: background 0.2s ease, color 0.2s ease; // 更改过渡效果
+        color: $secondary-color; // 使用辅助色
+
+        &:hover {
+          background: rgba(0, 170, 255, 0.1); // 悬停效果
+          border-radius: 5px; // 圆角效果
+        }
       }
 
       .active::after {
@@ -113,57 +121,63 @@ $bg-color: #fbfbfb;
         transform: translateX(-50%);
         height: 3px;
         border-radius: 2px;
-        background: #20a0ff;
+        background: $secondary-color; // 使用辅助色
       }
     }
 
     li {
-      margin-bottom: 10px;
-      background: $bg-color;
-      box-shadow: 0 0 5px #ccc;
+      margin-bottom: 15px; // 增加下边距
+      background: $bg-color; // 背景颜色
+      box-shadow: 0 0 10px $shadow-color; // 增加阴影效果
+      border-radius: 8px; // 圆角效果
+      overflow: hidden; // 溢出隐藏
     }
 
     .name {
       display: inline-block;
-      font-size: 14px;
-      margin-left: 5px;
-      width: calc(100% - 50px);
+      font-size: 16px; // 增加字体大小
+      margin-left: 10px; // 增加左边距
+      width: calc(100% - 60px); // 宽度计算
       white-space: nowrap;
       overflow: hidden;
       text-overflow: ellipsis;
       vertical-align: middle;
+      color: $primary-color; // 使用主色
     }
 
     .desc {
-      padding: 10px;
-      border-top: 1px solid #eee;
+      padding: 15px; // 增加内边距
+      border-top: 2px solid $primary-color; // 使用主色作为顶部边框
       margin-top: 8px;
       word-break: break-all;
       word-wrap: break-word;
       white-space: pre-wrap;
-      font-size: 12px;
+      font-size: 14px; // 增加字体大小
+      color: #666; // 更柔和的字体颜色
     }
 
     .block-title {
-      padding: 10px 0 10px 15px;
-      border-bottom: 1px solid #eee;
-      color: #3F51B5;
+      padding: 15px 0 15px 15px; // 增加内边距
+      border-bottom: 2px solid $primary-color; // 使用主色作为底部边框
+      color: $primary-color; // 使用主色
+      font-size: 18px; // 增加字体大小
     }
 
     .top {
-      padding: 10px;
+      padding: 15px; // 增加内边距
       display: flex;
       align-items: center;
+      background: rgba(255, 165, 0, 0.05); // 主色的背景效果
+      border-radius: 8px; // 圆角效果
     }
   }
 
   .row {
     display: flex;
-    -webkit-flex-wrap: wrap;
     flex-wrap: wrap;
 
     a {
-      color: #333;
+      color: $secondary-color; // 使用辅助色
     }
 
     .item-list {
@@ -171,8 +185,10 @@ $bg-color: #fbfbfb;
       position: relative;
       width: calc(50% - 18px);
       margin: 12px;
-      border: 1px solid #eee;
+      border: 1px solid $primary-color; // 使用主色作为边框
       overflow: hidden;
+      border-radius: 8px; // 圆角效果
+      transition: transform 0.2s ease; // 更改过渡效果
 
       &:nth-child(odd) {
         margin-right: 6px;
@@ -183,6 +199,7 @@ $bg-color: #fbfbfb;
       }
 
       &:hover {
+        transform: scale(1.02); // 悬停放大效果
 
         ::ng-deep .mark {
           bottom: 0 !important;
