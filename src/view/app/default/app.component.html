@@ -33,7 +33,7 @@
       </a>
     </nav>
     <ul>
-      <li *ngFor="let item of currentList">
+      <li *ngFor="let item of currentList" style="background: #ffffff;opacity: 0.9; backdrop-filter: blur(10px); border-radius: 10px;">
         <h2 class="block-title" *ngIf="item.title">
           {{ item.title }} x {{ item.nav.length }}
         </h2>
