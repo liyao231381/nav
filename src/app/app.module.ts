@@ -73,6 +73,7 @@ import WebpComponent from '../view/app/default/app.component'
 
 
 import { CheckOutline, CopyOutline, ShareAltOutline, EllipsisOutline, LoadingOutline, UploadOutline, MinusOutline, PlusOutline } from '@ant-design/icons-angular/icons';
+import { ReversePipe } from './reverse.pipe';
 
 const icons: IconDefinition[] = [ CheckOutline, CopyOutline, ShareAltOutline, EllipsisOutline, LoadingOutline, UploadOutline, MinusOutline, PlusOutline ];
 
@@ -107,7 +108,8 @@ const icons: IconDefinition[] = [ CheckOutline, CopyOutline, ShareAltOutline, El
     WebListComponent,
     LogoComponent,
     CardComponent,
-    MoveSiteComponent
+    MoveSiteComponent,
+    ReversePipe
   ],
   imports: [
     BrowserAnimationsModule,

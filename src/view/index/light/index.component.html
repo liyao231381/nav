@@ -7,18 +7,20 @@
     >
     </app-fixbar>
 
-    <nav class="top-nav user-select-none dark-border-color dark-bg">
-      <a 
-        *ngFor="let item of websiteList; index as i;" 
-        (click)="handleCilckTopNav(i)" 
-        [class.active]="page === i" 
-        [class.dark-text-active]="page === i" 
-        [class.remove]="!isLogin && item.ownVisible"
-        class="ripple-btn dark-text"
-      >
-        {{ item.title }}
-      </a>
+    <nav class="top-nav user-select-none dark-border-color dark-bg"> <!-- 顶部导航 -->
+      <ng-container *ngFor="let item of websiteList | reverse; index as i;"> <!-- 使用 ng-container 包裹 ngFor -->
+        <a 
+          (click)="handleCilckTopNav(i)" 
+          [class.active]="page === i" 
+          [class.dark-text-active]="page === i" 
+          [class.remove]="!isLogin && item.ownVisible" 
+          class="ripple-btn dark-text"
+        >
+          {{ item.title }} <!-- 显示网站标题 -->
+        </a>
+      </ng-container>
     </nav>
+    
 
     <section class="index-section user-select-none dark-bg">
       <aside class="sidebar dark-bg dark-border-color" id="sidebar">
