@@ -1,4 +1,4 @@
-<section class="app-page user-select-none" style="background: linear-gradient(135deg, #00aaff 0, #ffa500 30%, #ff0000 100%);">
+<section class="app-page user-select-none" style="background: linear-gradient(135deg, #00aaff 0, #ffa500 30%, #00ff00 70%, #ff0000 100%);">
   <header class="header">
     <div class="header-top">
       <img [src]="LOGO_CDN" class="logo" alt="logo">
@@ -8,7 +8,7 @@
         <i></i>
       </div>
     </div>
-    <nav class="nav-open" style="background: #ffa500;">
+    <nav class="nav-open">
       <div 
         *ngFor="let item of websiteList | reverse; let i = index;"
         (click)="handleCilckNav(i)" 
@@ -21,13 +21,12 @@
   </header>
   
   <div class="wrapper" *ngIf="websiteList[page]">
-    <nav class="children-nav" *ngIf="websiteList[page].nav.length > 1" style="background: #000000;opacity: 0.2; backdrop-filter: blur(10px); border-radius: 10px;">
+    <nav class="children-nav" *ngIf="websiteList[page].nav.length > 1" >
       <a
         class="tag" 
         *ngFor="let item of websiteList[page].nav | reverse; let i = index" 
         [class.active]="id === i" 
         (click)="handleSidebarNav(i)"
-        style="color: #fff;"
       >
         {{ item.title }}
       </a>

@@ -5,7 +5,7 @@ $shadow-color: rgba(0, 0, 0, 0.1); // 阴影颜色
 .app-page {
   padding: 45px 0;
   min-height: 100vh;
-  background: linear-gradient(135deg, #FF7E00 0%, #FF007A 50, #00AAFF 100%);
+  background: linear-gradient(135deg, #FF7E00 0%, #FF007A 50%, #00AAFF 100%);
 
   .header {
     z-index: 9999;
@@ -27,10 +27,11 @@ $shadow-color: rgba(0, 0, 0, 0.1); // 阴影颜色
 
       .logo {
         display: inline-block;
-        width: 40px; // 增加logo大小
-        height: 40px;
+        width: 44px; // 增加logo大小
+        height: 44px;
         margin-top: 8px; // 调整上边距
         pointer-events: none;
+        border-radius: 100%; // 圆角效果
       }
     }
 
@@ -42,10 +43,10 @@ $shadow-color: rgba(0, 0, 0, 0.1); // 阴影颜色
 
       i {
         display: block;
-        margin-top: 8px; // 调整上边距
+        margin-top: 5px; // 调整上边距
         height: 3px; // 调整高度
         width: 30px; // 调整宽度
-        background: $primary-color; // 使用主色
+        background: white; // 使用主色
         border-radius: 2px; // 圆角效果
         transition: transform 0.2s ease; // 更改过渡效果
       }
@@ -80,7 +81,6 @@ $shadow-color: rgba(0, 0, 0, 0.1); // 阴影颜色
       width: 50%;
       font-size: 18px; // 增加字体大小
       padding: 10px 0; // 增加内边距
-      color: $primary-color; // 使用主色
 
       &:active,
       &.active {
@@ -93,12 +93,19 @@ $shadow-color: rgba(0, 0, 0, 0.1); // 阴影颜色
     margin: 20px 10px 30px 10px; // 调整外边距
 
     .children-nav {
-      background: white;
+      background: rgba(0, 0, 0, 0.2); /* 半透明黑色背景 */
+      backdrop-filter: blur(10px); /* 背景模糊效果 */
+      border-radius: 10px; /* 圆角效果 */
       margin: 15px 0;
-      padding: 15px 10px; // 增加内边距
+      padding: 0px 5px; // 增加内边距
       white-space: nowrap;
-      overflow: auto;
+      overflow: auto; // 允许滚动
       box-shadow: 0 2px 5px $shadow-color; // 增加阴影效果
+
+      // 隐藏滚动条的样式
+      &::-webkit-scrollbar {
+        display: none; // 隐藏滚动条
+      }
 
       a {
         position: relative;
@@ -107,10 +114,13 @@ $shadow-color: rgba(0, 0, 0, 0.1); // 阴影颜色
         padding: 5px 10px; // 增加内边距
         margin: 0 5px 5px 0;
         transition: background 0.2s ease, color 0.2s ease; // 更改过渡效果
-        color: $secondary-color; // 使用辅助色
+        color: white;
 
         &:hover {
-          background: rgba(0, 170, 255, 0.1); // 悬停效果
+          margin: 0 5px 0px 5px;
+          padding-top: 2px;
+          padding-bottom: 7px;// 增加内边距
+          background: rgba(0, 170, 255, 0.3); // 悬停效果
           border-radius: 5px; // 圆角效果
         }
       }
@@ -145,12 +155,12 @@ $shadow-color: rgba(0, 0, 0, 0.1); // 阴影颜色
       overflow: hidden;
       text-overflow: ellipsis;
       vertical-align: middle;
-      color: $primary-color; // 使用主色
+      color: rgba(0, 0, 0, 0.6); // 使用主色
     }
 
     .desc {
       padding: 15px; // 增加内边距
-      border-top: 2px solid $primary-color; // 使用主色作为顶部边框
+      border-top: 2px solid $secondary-color; // 使用主色作为顶部边框
       margin-top: 8px;
       word-break: break-all;
       word-wrap: break-word;
@@ -167,7 +177,7 @@ $shadow-color: rgba(0, 0, 0, 0.1); // 阴影颜色
     }
 
     .top {
-      padding: 15px; // 增加内边距
+      padding: 5px; // 增加内边距
       display: flex;
       align-items: center;
       background: rgba(255, 165, 0, 0.05); // 主色的背景效果
@@ -188,7 +198,7 @@ $shadow-color: rgba(0, 0, 0, 0.1); // 阴影颜色
       position: relative;
       width: calc(50% - 18px);
       margin: 12px;
-      border: 1px solid $primary-color; // 使用主色作为边框
+      border: 1px solid $secondary-color; // 使用主色作为边框
       overflow: hidden;
       border-radius: 8px; // 圆角效果
       transition: transform 0.2s ease; // 更改过渡效果
